@@ -40,18 +40,18 @@ class LichReport
 
   def process_example_notification(example_notification)
     current_hash = arrange_report_hash(example_notification.example)
-    # execution_result = example_notification.example.execution_result
-    # return unless execution_result
-    # current_hash[:status] = execution_result.status
+    execution_result = example_notification.example.execution_result
+    return unless execution_result
+    current_hash[:status] = execution_result.status
   end
 
   def process_failed_example_notification(failed_example_notification)
-    # current_hash = arrange_report_hash(failed_example_notification.example)
-    # execution_result = failed_example_notification.example.execution_result
+    current_hash = arrange_report_hash(failed_example_notification.example)
+    execution_result = failed_example_notification.example.execution_result
     # return unless execution_result
-    # current_hash[:status] = execution_result.status
-    # current_hash[:exception] = failed_example_notification.exception.to_s
-    # current_hash[:backtrace] = failed_example_notification.formatted_backtrace
+    current_hash[:status] = execution_result.status
+    current_hash[:exception] = failed_example_notification.exception.to_s
+    current_hash[:backtrace] = failed_example_notification.formatted_backtrace
   end
 
   def example_started(example_notification)
