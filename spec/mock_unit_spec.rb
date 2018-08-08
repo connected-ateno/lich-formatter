@@ -44,6 +44,7 @@ RSpec.describe MockUnit, '#mock_unit' do
         expect(MockUnit.method(ERROR, NO_DURATION)).to eq true
       end
     end
+
     context 'with some duration' do
       it 'should error slowly' do
         expect(MockUnit.method(ERROR, MEDIUM_DURATION)).to eq true
